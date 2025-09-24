@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <title>ML-Lang: Malayalam-Inspired Programming</title>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="https://bhashabytes.github.io/" class="site-logo" aria-label="BhashaBytes Home">
+    <img src="logo.png" alt="BhashaBytes Logo" />
+  </a>
+  <h1>ML-Lang: Malayalam-Inspired Programming</h1>
+
+  <div class="intro-card">
+    <p>
+      Welcome to <strong>ML-Lang</strong> – a programming language designed especially for Malayalam speakers!
+      ML-Lang makes coding more intuitive by using Malayalam words and their transliterations as keywords,
+      instead of English-based Python syntax. It’s beginner-friendly and runs fully on Python via a translation layer.
+    </p>
+    <p>
+      Write code below, run it instantly, and explore ML-Lang’s features with live examples. Learning programming
+      has never been this friendly!
+    </p>
+  </div>
+  <div class="container">
+    <textarea id="mlCode" rows="10">അച്ചടിക്കുക("ഹലോ ML-Lang!")</textarea>
+    <br>
+    <button onclick="runCode()">Run Code</button>
+    <pre id="output">Output will appear here...</pre>
+  </div>
+
+  <h2>Documentation & Examples</h2>
+  <div class="docs">
+    <h3>Print (അച്ചടിക്കുക / achadikuka)</h3>
+    <pre>അച്ചടിക്കുക("ഹലോ ലോകമേ")</pre>
+
+    <h3>Functions (ഫംഗ്ഷൻ / phangshan)</h3>
+    <pre>നിർവചിക്കുക കൂട്ടം(a, b):
+    മടക്കുക a + b
+
+അച്ചടിക്കുക("മൊത്തം =", കൂട്ടം(3, 5))</pre>
+
+    <h3>Input (എടുക്കുക / edukuka)</h3>
+    <pre>a = int(എടുക്കുക("സംഖ്യ 1:"))
+b = int(എടുക്കുക("സംഖ്യ 2:"))
+അച്ചടിക്കുക("മൊത്തം =", a + b)</pre>
+
+    <h3>Conditionals</h3>
+    <pre>i = 5
+എങ്കിൽ i > 3:
+    അച്ചടിക്കുക("വലുത്")
+അല്ലെങ്കിൽ i == 3:
+    അച്ചടിക്കുക("സമം")
+അല്ലെങ്കിൽ:
+    അച്ചടിക്കുക("ചെറുത്")</pre>
+
+    <h3>Loops</h3>
+    <pre>ഇതിനായി x in [1,2,3]:
+    അച്ചടിക്കുക("x =", x)
+
+i = 0
+വരെ i < 3:
+    അച്ചടിക്കുക("i =", i)
+    i += 1</pre>
+
+    <h3>Loop Control</h3>
+    <pre>ഇതിനായി x in [1,2,3]:
+    എങ്കിൽ x == 2:
+        അച്ചടിക്കുക("രണ്ട് കണ്ടെത്തി")
+        നിലയ്ക്കുക
+    അല്ലെങ്കിൽ:
+        അച്ചടിക്കുക(x)</pre>
+
+    <h3>Booleans & None</h3>
+    <pre>എങ്കിൽ സത്യം:
+    അച്ചടിക്കുക("true")
+അല്ലെങ്കിൽ അസത്യം:
+    അച്ചടിക്കുക("false")
+അച്ചടിക്കുക("ശൂന്യം =", ഒന്നുമില്ല)</pre>
+
+    <h3>Exceptions</h3>
+    <pre>ശ്രമിക്കുക:
+    1 / 0
+ഒഴിവാക്കുക ZeroDivisionError:
+    അച്ചടിക്കുക("പൂജ്യത്തിൽ വിഭജനം സാധ്യമല്ല")
+അവസാനം:
+    അച്ചടിക്കുക("എപ്പോഴും പ്രവർത്തിക്കുന്നു")</pre>
+
+    <h3>Imports</h3>
+    <pre>ഇറക്കുമതി math ആയി m
+അച്ചടിക്കുക(m.sqrt(16))</pre>
+  </div>
+
+  <h2>ML-Lang Keywords</h2>
+  <div class="reference-box">
+    <table>
+      <thead>
+        <tr><th>Python</th><th>Malayalam</th><th>Transliteration</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>print</td><td>അച്ചടിക്കുക</td><td>achadikuka</td></tr>
+        <tr><td>input</td><td>എടുക്കുക</td><td>edukuka</td></tr>
+        <tr><td>if</td><td>എങ്കിൽ</td><td>enkil</td></tr>
+        <tr><td>elif</td><td>അല്ലെങ്കിൽ</td><td>allenkil</td></tr>
+        <tr><td>else</td><td>അല്ലെങ്കിൽ</td><td>allenkilum</td></tr>
+        <tr><td>for</td><td>ഇതിനായി</td><td>ithinaayi</td></tr>
+        <tr><td>while</td><td>വരെ</td><td>vare</td></tr>
+        <tr><td>def</td><td>നിർവചിക്കുക</td><td>nirvachikuka</td></tr>
+        <tr><td>class</td><td>വർഗ്ഗം</td><td>varggam</td></tr>
+        <tr><td>return</td><td>മടക്കുക</td><td>matakkuka</td></tr>
+        <tr><td>break</td><td>നിലയ്ക്കുക</td><td>nilaykkuka</td></tr>
+        <tr><td>continue</td><td>തുടരുക</td><td>thudaruka</td></tr>
+        <tr><td>import</td><td>ഇറക്കുമതി</td><td>irakkumathi</td></tr>
+        <tr><td>from</td><td>മുതൽ</td><td>muthal</td></tr>
+        <tr><td>as</td><td>ആയി</td><td>aayi</td></tr>
+        <tr><td>with</td><td>കൂടെ</td><td>koode</td></tr>
+        <tr><td>try</td><td>ശ്രമിക്കുക</td><td>shramikkuka</td></tr>
+        <tr><td>except</td><td>ഒഴിവാക്കുക</td><td>ozhivakkuka</td></tr>
+        <tr><td>finally</td><td>അവസാനം</td><td>avasanam</td></tr>
+        <tr><td>True</td><td>സത്യം</td><td>sathyam</td></tr>
+        <tr><td>False</td><td>അസത്യം</td><td>asathyam</td></tr>
+        <tr><td>None</td><td>ഒന്നുമില്ല</td><td>onnummilla</td></tr>
+        <tr><td>or</td><td>അഥവാ</td><td>athavaa</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let pyodideReady = false, pyodide;
+    async function loadPyodideAndPackages() {
+      pyodide = await loadPyodide();
+      pyodide.runPython(`
+import sys
+from js import document, prompt
+class OutputCatcher:
+  def write(self, s):
+    if s.strip():
+      document.getElementById("output").textContent += s + "\\n"
+  def flush(self): pass
+sys.stdout = OutputCatcher()
+sys.stderr = OutputCatcher()
+def input(msg=""):
+  resp = prompt(str(msg))
+  return "" if resp is None else str(resp)
+`);
+      pyodideReady = true;
+    }
+    loadPyodideAndPackages();
+
+    const mapping = {
+      "അച്ചടിക്കുക":"print","achadikuka":"print",
+      "എടുക്കുക":"input","edukuka":"input",
+      "എങ്കിൽ":"if","enkil":"if",
+      "അല്ലെങ്കിൽ":"elif","allenkil":"elif",
+      "അല്ലെങ്കിൽ":"else","allenkilum":"else",
+      "ഇതിനായി":"for","ithinaayi":"for",
+      "വരെ":"while","vare":"while",
+      "നിർവചിക്കുക":"def","nirvachikuka":"def",
+      "വർഗ്ഗം":"class","varggam":"class",
+      "മടക്കുക":"return","matakkuka":"return",
+      "നിലയ്ക്കുക":"break","nilaykkuka":"break",
+      "തുടരുക":"continue","thudaruka":"continue",
+      "ഇറക്കുമതി":"import","irakkumathi":"import",
+      "മുതൽ":"from","muthal":"from",
+      "ആയി":"as","aayi":"as",
+      "കൂടെ":"with","koode":"with",
+      "ശ്രമിക്കുക":"try","shramikkuka":"try",
+      "ഒഴിവാക്കുക":"except","ozhivakkuka":"except",
+      "അവസാനം":"finally","avasanam":"finally",
+      "സത്യം":"True","sathyam":"True",
+      "അസത്യം":"False","asathyam":"False",
+      "ഒന്നുമില്ല":"None","onnummilla":"None",
+      "അഥവാ":"or","athavaa":"or"
+    };
+
+    function escapeRegExp(str) {
+      return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function translate(code) {
+      for (let ml in mapping) {
+        const re = new RegExp(`(?<!\\w)${escapeRegExp(ml)}(?!\\w)`, 'gu');
+        code = code.replace(re, mapping[ml]);
+      }
+      return code;
+    }
+
+    async function runCode() {
+      if (!pyodideReady) { alert("Loading..."); return; }
+      document.getElementById("output").textContent = "";
+      const rawCode = document.getElementById("mlCode").value;
+      const pyCode = translate(rawCode);
+      try { await pyodide.runPythonAsync(pyCode); }
+      catch(err) { document.getElementById("output").textContent += "Error: "+err+"\n"; }
+    }
+  </script>
+</body>
+</html>
